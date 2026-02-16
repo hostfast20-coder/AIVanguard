@@ -6,31 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
     <a href="./index.html" id="back">Back</a>
     <img src="./gradient.png" alt="">
     <div class="heading">
-        <h1>TAILWIND CSS</h1>
-        <h2>GENERATOR</h2>
+        <h1 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+            data-aos-duration="1000">TAILWIND CSS</h1>
+        <h2 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+            data-aos-duration="2000">GENERATOR</h2>
     </div>
 
-    <div class="btn-start-genrating">
-        <div class="btn-box">
-        <p style="color: black;">
-    paste the image
-</p>
+    <div class="btn-start-genrating" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+        data-aos-offset="0" data-aos-duration="3000">
+        <div class="btn-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+            data-aos-offset="0" data-aos-duration="4000">
+            <p style="color: black;">
+                paste the image
+            </p>
 
-        <br>
-        <p style="color: black;">
-            or
-        </p>
-        <br>
-        <button style="color: black;">upload from folders</button>
+            <br>
+            <p style="color: black;">
+                or
+            </p>
+            <br>
+            <button style="color: black;">upload from folders</button>
         </div>
         <button id="generator">START GENERATING</button>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

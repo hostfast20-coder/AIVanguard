@@ -42,3 +42,13 @@ body{
   align-items: center;
   margin: 20px;
 }
+
+.btn-box{
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgb(136, 2, 245);
+}
+
+#generator {
+    border-radius: 23px;
+    box-shadow: 4px 4px 4px rgb(144, 0, 254);
+}
