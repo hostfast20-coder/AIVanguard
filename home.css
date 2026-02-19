@@ -10,6 +10,7 @@ body{
     color:#e7e7e7 ;
     min-height: 100vh;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 *{
@@ -18,19 +19,56 @@ body{
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+}
+
 .heading {
     font-family: "Playwrite AT", cursive;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.heading h1, .heading h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-start-genrating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
 }
 .btn-box{
     background-color:rgb(255, 255, 255);
     
     height: 200px;
     width: 190px;
-    margin: 15px;
+    margin: 10px;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-box p {
+    margin: 0;
+    padding: 0;
 }
 
 #generator{
@@ -40,7 +78,7 @@ body{
   font-style: normal;
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .btn-box{
