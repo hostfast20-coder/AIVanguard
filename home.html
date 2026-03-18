@@ -4,37 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>WINDIFY - Tailwind CSS Generator</title>
     <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
-    <a href="./index.html" id="back">Back</a>
-    <img src="./gradient.png" alt="">
-    <div class="layer-blur"></div>
-    <div class="heading">
-        <h1 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
-            data-aos-duration="1000">TAILWIND CSS</h1>
-        <h2 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
-            data-aos-duration="2000">GENERATOR</h2>
-    </div>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Back Button -->
+    <a href="./index.html" class="back-btn">← Back</a>
 
-    <div class="btn-start-genrating" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
-        data-aos-offset="0" data-aos-duration="3000">
-        <div class="btn-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
-            data-aos-offset="0" data-aos-duration="4000">
-            <p style="color: rgb(107, 105, 105);">paste the image</p>
-            <p style="color: rgb(112, 111, 111);">or</p>
-            <button style="color: black;">upload from folders</button>
+    <!-- Three.js Canvas -->
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title">
+                    <span class="glow-text"></span>WINDIFY
+                </h1>
+                <h2 class="hero-subtitle">Tailwind CSS Generator</h2>
+                <p class="hero-description">Transform your design into code with AI-powered precision</p>
+            </div>
         </div>
-        <button id="generator">START GENERATING</button>
+
+        <!-- Interactive Generator Box -->
+        <div class="generator-wrapper" data-aos="fade-up" data-aos-duration="1200">
+            <div class="generator-box">
+                <div class="box-header">
+                    <span class="box-icon">⚡</span>
+                    <h3>Upload Design</h3>
+                </div>
+                
+                <div class="box-content">
+                    <div class="upload-area" id="uploadArea">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="upload-text">Click, drag & drop, or paste image here</p>
+                        <img id="uploadPreview" class="upload-preview" alt="Uploaded preview" hidden>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <button class="primary-btn" id="generateBtn">
+                        <span class="btn-text">START GENERATING</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Options Panel (Hidden by default) -->
+            <div class="options-panel" id="optionsPanel">
+                <h3 class="options-title">Generation Options</h3>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <input type="checkbox" id="responsive" checked>
+                        <label for="responsive">Responsive Design</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="darkMode" checked>
+                        <label for="darkMode">Dark Mode Support</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="animations">
+                        <label for="animations">Include Animations</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="optimization" checked>
+                        <label for="optimization">Optimize Code</label>
+                    </div>
+                </div>
+                <button class="secondary-btn" id="confirmBtn">Confirm & Generate</button>
+            </div>
+        </div>
+
+        <!-- Results Panel -->
+        <div class="results-panel" id="resultsPanel">
+            <div class="results-header">
+                <h3>Generated Tailwind CSS</h3>
+                <div class="results-actions">
+                    <button class="secondary-btn" id="copyBtn">Copy CSS</button>
+                </div>
+            </div>
+            <pre id="resultCode" class="code-block">Upload an image and click “Confirm & Generate” to see the Tailwind output here.</pre>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-section" data-aos="fade-up" data-aos-duration="1400">
+            <h2 class="section-title">Why Choose AIVanguard?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design to Code</h3>
+                    <p>Convert your designs instantly into clean Tailwind CSS</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>GPU-powered processing for instant results</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Enhanced</h3>
+                    <p>Machine learning optimizations for best practices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Pixel Perfect</h3>
+                    <p>Accuracy down to the smallest detail</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Glow Effect Elements -->
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+
+    <!-- Load all libraries -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="./script.js"></script>
+    <script type="module" src="./home.js"></script>
 
 </body>
 
